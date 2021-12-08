@@ -21,7 +21,7 @@
 
             <ul>
                 <li>
-                    <a href = "spele.html">
+                    <a href = "spele_v.html">
                     Spēle
                     </a>
                 </li>
@@ -30,14 +30,49 @@
                     Spēlētāju tops
                     </a>
                 </li>
+                <li>
+                    <a href = "info.html">
+                    Spēles veidotāji
+                    </a>
+                </li>
             </ul>
         </div><!--Beidzās header-->
 
         <div class = "content">
             <p>Sajaukto burtu spēle palīdzēs Tev attīstīt lasītprasmi un uzmanību, kā arī palielināt vārdu krājumu.</p>
             <p>Spied uz "Spēle" un sāc meklēt vārdus sajauktajos burtos!</p>
+            Vārds: <input id = 'vards'/>
+            <br />
+            Vecums: <input id='vecums'/>
+            <br />
+
+            <button onclick = "saktSpeli()">Sākt</button>   <!--saktSpeli() - funkcijas nosaukums-->
         </div>
 
     </div><!--Beidzās wrapper-->
+
+
+<script>
+    function saktSpeli()    //Funkcija
+    {
+        let vards = document.querySelector('#vards').value   //# jo id nevis class
+        let vecums = document.querySelector('#vecums').value
+        
+        console.log(vards)
+
+        window.location='spele_v.html'
+
+        if(vards == '')
+        {
+            alert('Ievadi vārdu!')
+        }
+        else
+        {
+            //Pārejam uz failu spele.html, pievienojam informāciju
+            window.location='spele_v.html#'+vards+','+vecums+','+regions   
+        }
+
+    }  //Beidzas saktSpeli() funkcija
+</script>
 </body>
 </html>

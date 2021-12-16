@@ -10,6 +10,7 @@ document.querySelector('.virsraksts').innerHTML = 'Sveiks, '+vards
 // let laukumuSaturs = ['A','K','A','B','L','C','O','Ā','A']
 let atvertieLaukumi = []
 // let pedejieDivi = []
+//let r_vards = ('#'+r_vards+' div')
 
 function veiktGajienu(laukums)
 {
@@ -29,7 +30,8 @@ function veiktGajienu(laukums)
         
         //Nomainīts uz visibility. Nemaina izkārtojumu!
         document.querySelector('#'+laukums+' div').style.visibility="hiden";
-        document.querySelector('#'+laukums+' div').style.opacity=1
+        document.querySelector('#'+laukums+' div').style.opacity="0.1";
+        
         //pedejieDivi.push(laukums)
         //let burts = 
     }

@@ -49,3 +49,11 @@ Klase game centrējas tikai savā platumā
     height: 50px;
 
 }
+
+.block div
+{
+    /*display:none;*/
+    /*Nomainīts uz visibility, lai parādīšanas laikā nemainītu izvietojumu*/
+    visibility: visible;
+    
+}

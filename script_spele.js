@@ -30,9 +30,9 @@ function random_burts()
  }
 
 
-debugger
 console.log(document.getElementById("B1").innerHTML)
-let laukumuSaturs = [document.getElementById("B0").innerHTML,
+let laukumuSaturs = [
+document.getElementById("B0").innerHTML,
 document.getElementById("B1").innerHTML,
 document.getElementById("B2").innerHTML,
 document.getElementById("B3").innerHTML,
@@ -43,8 +43,7 @@ document.getElementById("B7").innerHTML,
 document.getElementById("B8").innerHTML,
 ]
 let atvertieLaukumi = []
-// let pedejieDivi = []
-//let r_vards = ('#'+r_vards+' div')
+
 
 function veiktGajienu(laukums)
 {
@@ -79,21 +78,4 @@ function veiktGajienu(laukums)
         
     }
 
-    // if( laukumuSaturs.length == atvertieLaukumi.length )
-    // {
-    //     // var hey = document.getElementById("L5");
-    //     // console.log(hey)
-    //     // if (window.getComputedStyle(hey).visibility === "visible"){
-    //     //     setTimeout(()=>{
-    //     //         alert('Apsveicam!')
-    //     //     },1000);
-            
-    //     // }
-
-    //     setTimeout(()=>
-    //     {
-    //         alert('Apsveicam!')
-    //     },1000);
-        
-    // }
 }

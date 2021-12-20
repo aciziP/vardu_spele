@@ -6,8 +6,42 @@ adrese = adrese.split(",")
 let vards  = adrese[0]
 document.querySelector('.virsraksts').innerHTML = 'Sveiks, '+vards
 
+function random_burts()
+ {
+    const alphabet = "AĀBCČDEĒFGĢHIĪJKĶLĻMNŅOPRSŠTUŪVZŽ"
+    const randomCharacter_null = alphabet[Math.floor(Math.random() * alphabet.length)]
+    const randomCharacter_one = alphabet[Math.floor(Math.random() * alphabet.length)]
+    const randomCharacter_two = alphabet[Math.floor(Math.random() * alphabet.length)]
+    const randomCharacter_three = alphabet[Math.floor(Math.random() * alphabet.length)]
+    const randomCharacter_four= alphabet[Math.floor(Math.random() * alphabet.length)]
+    const randomCharacter_five = alphabet[Math.floor(Math.random() * alphabet.length)]
+    const randomCharacter_six = alphabet[Math.floor(Math.random() * alphabet.length)]
+    const randomCharacter_seven = alphabet[Math.floor(Math.random() * alphabet.length)]
+    const randomCharacter_eight = alphabet[Math.floor(Math.random() * alphabet.length)]
+    document.getElementById("B0").innerHTML =randomCharacter_null //Pievieno burtu
+    document.getElementById("B1").innerHTML =randomCharacter_one
+    document.getElementById("B2").innerHTML =randomCharacter_two
+    document.getElementById("B3").innerHTML =randomCharacter_three
+    document.getElementById("B4").innerHTML =randomCharacter_four
+    document.getElementById("B5").innerHTML =randomCharacter_five
+    document.getElementById("B6").innerHTML =randomCharacter_six
+    document.getElementById("B7").innerHTML =randomCharacter_seven
+    document.getElementById("B8").innerHTML =randomCharacter_eight
+ }
 
-let laukumuSaturs = ['A','K','A','B','L','C','O','Ā','A']
+
+debugger
+console.log(document.getElementById("B1").innerHTML)
+let laukumuSaturs = [document.getElementById("B0").innerHTML,
+document.getElementById("B1").innerHTML,
+document.getElementById("B2").innerHTML,
+document.getElementById("B3").innerHTML,
+document.getElementById("B4").innerHTML,
+document.getElementById("B5").innerHTML,
+document.getElementById("B6").innerHTML,
+document.getElementById("B7").innerHTML,
+document.getElementById("B8").innerHTML,
+]
 let atvertieLaukumi = []
 // let pedejieDivi = []
 //let r_vards = ('#'+r_vards+' div')

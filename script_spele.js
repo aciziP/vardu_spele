@@ -7,7 +7,7 @@ let vards  = adrese[0]
 document.querySelector('.virsraksts').innerHTML = 'Sveiks, '+vards
 
 
-// let laukumuSaturs = ['A','K','A','B','L','C','O','Ā','A']
+let laukumuSaturs = ['A','K','A','B','L','C','O','Ā','A']
 let atvertieLaukumi = []
 // let pedejieDivi = []
 //let r_vards = ('#'+r_vards+' div')
@@ -32,8 +32,17 @@ function veiktGajienu(laukums)
         document.querySelector('#'+laukums+' div').style.visibility="hiden";
         document.querySelector('#'+laukums+' div').style.opacity="0.1";
         
-        //pedejieDivi.push(laukums)
-        //let burts = 
+        /*debugger
+        //Sadalīt "laukums?", lai var paņemt tikai skaitli un izmantot to, lai paņemtu burtu no masīva
+        // let viss_kop = document.getElementById(laukums);
+        // let sadal = viss_kop
+        // document.getElementById("r_vards").innerHTML = 'Vārds: '+sadal*/
+
+        //VISS IR VIENKĀRŠĀK!!!!!
+        let sadal = laukums[1]   //Paņem laukuma numuru
+        let kurs_burts = laukumuSaturs[sadal]   //Paņem attiecīgo burtu no laukumuSaturs
+        document.getElementById("r_vards").innerHTML +=kurs_burts  //Pievieno burtu
+        
     }
 
     // if( laukumuSaturs.length == atvertieLaukumi.length )

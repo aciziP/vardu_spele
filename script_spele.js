@@ -31,26 +31,33 @@ function random_burts()
 
 
 console.log(document.getElementById("B1").innerHTML)
-let laukumuSaturs = [
-document.getElementById("B0").innerHTML,
-document.getElementById("B1").innerHTML,
-document.getElementById("B2").innerHTML,
-document.getElementById("B3").innerHTML,
-document.getElementById("B4").innerHTML,
-document.getElementById("B5").innerHTML,
-document.getElementById("B6").innerHTML,
-document.getElementById("B7").innerHTML,
-document.getElementById("B8").innerHTML,
-]
+
 let atvertieLaukumi = []
+
+console.log(document.getElementById("B0").innerHTML)
+
 
 
 function veiktGajienu(laukums)
 {
+    
+    let laukumuSaturs = [
+        document.getElementById("B0").innerHTML,
+        document.getElementById("B1").innerHTML,
+        document.getElementById("B2").innerHTML,
+        document.getElementById("B3").innerHTML,
+        document.getElementById("B4").innerHTML,
+        document.getElementById("B5").innerHTML,
+        document.getElementById("B6").innerHTML,
+        document.getElementById("B7").innerHTML,
+        document.getElementById("B8").innerHTML,
+        ]
+        console.log(laukumuSaturs)
     let atvertsJaunsLaukums = false
     if( atvertieLaukumi.indexOf(laukums) == -1 )
     {
         atvertsJaunsLaukums = true
+        console.log(document.getElementById(laukums).innerHTML)
     }
     else
     {
@@ -62,9 +69,15 @@ function veiktGajienu(laukums)
     {
         
         //Nomainīts uz visibility. Nemaina izkārtojumu!
-        document.querySelector('#'+laukums+' div').style.visibility="hiden";
-        document.querySelector('#'+laukums+' div').style.opacity="0.1";
         
+        //KĻŪDA, pēc buru nomaiņas neredz, ka tas ir div elements
+        // document.querySelector('#'+laukums+' div').style.visibility="hiden";
+        // document.querySelector('#'+laukums+' div').style.opacity="0.1";
+        
+        
+         // document.querySelector(laukums).style.visibility="hiden";
+        // document.querySelector(laukums).style.opacity="0.1";
+
         /*debugger
         //Sadalīt "laukums?", lai var paņemt tikai skaitli un izmantot to, lai paņemtu burtu no masīva
         // let viss_kop = document.getElementById(laukums);

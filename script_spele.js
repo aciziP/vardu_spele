@@ -6,35 +6,110 @@ adrese = adrese.split(",")
 let vards  = adrese[0]
 document.querySelector('.virsraksts').innerHTML = 'Sveiks, '+vards
 
-function random_burts()
- {
-    const alphabet = "AĀBCČDEĒFGĢHIĪJKĶLĻMNŅOPRSŠTUŪVZŽ"
-    const randomCharacter_null = alphabet[Math.floor(Math.random() * alphabet.length)]
-    const randomCharacter_one = alphabet[Math.floor(Math.random() * alphabet.length)]
-    const randomCharacter_two = alphabet[Math.floor(Math.random() * alphabet.length)]
-    const randomCharacter_three = alphabet[Math.floor(Math.random() * alphabet.length)]
-    const randomCharacter_four= alphabet[Math.floor(Math.random() * alphabet.length)]
-    const randomCharacter_five = alphabet[Math.floor(Math.random() * alphabet.length)]
-    const randomCharacter_six = alphabet[Math.floor(Math.random() * alphabet.length)]
-    const randomCharacter_seven = alphabet[Math.floor(Math.random() * alphabet.length)]
-    const randomCharacter_eight = alphabet[Math.floor(Math.random() * alphabet.length)]
-    document.getElementById("B0").innerHTML =randomCharacter_null //Pievieno burtu
-    document.getElementById("B1").innerHTML =randomCharacter_one
-    document.getElementById("B2").innerHTML =randomCharacter_two
-    document.getElementById("B3").innerHTML =randomCharacter_three
-    document.getElementById("B4").innerHTML =randomCharacter_four
-    document.getElementById("B5").innerHTML =randomCharacter_five
-    document.getElementById("B6").innerHTML =randomCharacter_six
-    document.getElementById("B7").innerHTML =randomCharacter_seven
-    document.getElementById("B8").innerHTML =randomCharacter_eight
- }
+// function random_burts()
+//  {
+//     const alphabet = "AĀBCČDEĒFGĢHIĪJKĶLĻMNŅOPRSŠTUŪVZŽ"
+//     const randomCharacter_null = alphabet[Math.floor(Math.random() * alphabet.length)]
+//     const randomCharacter_one = alphabet[Math.floor(Math.random() * alphabet.length)]
+//     const randomCharacter_two = alphabet[Math.floor(Math.random() * alphabet.length)]
+//     const randomCharacter_three = alphabet[Math.floor(Math.random() * alphabet.length)]
+//     const randomCharacter_four= alphabet[Math.floor(Math.random() * alphabet.length)]
+//     const randomCharacter_five = alphabet[Math.floor(Math.random() * alphabet.length)]
+//     const randomCharacter_six = alphabet[Math.floor(Math.random() * alphabet.length)]
+//     const randomCharacter_seven = alphabet[Math.floor(Math.random() * alphabet.length)]
+//     const randomCharacter_eight = alphabet[Math.floor(Math.random() * alphabet.length)]
+//     document.getElementById("B0").innerHTML =randomCharacter_null //Pievieno burtu
+//     document.getElementById("B1").innerHTML =randomCharacter_one
+//     document.getElementById("B2").innerHTML =randomCharacter_two
+//     document.getElementById("B3").innerHTML =randomCharacter_three
+//     document.getElementById("B4").innerHTML =randomCharacter_four
+//     document.getElementById("B5").innerHTML =randomCharacter_five
+//     document.getElementById("B6").innerHTML =randomCharacter_six
+//     document.getElementById("B7").innerHTML =randomCharacter_seven
+//     document.getElementById("B8").innerHTML =randomCharacter_eight
+//  }
+
+let limenis = 0
+
+function limen_izv()
+{
+    const limenis = "123"
+    let izv_limenis = limenis[Math.floor(Math.random() * limenis.length)]
+
+    if (izv_limenis == 1)
+    {
+        plimenis(1)
+    }
+    else if (izv_limenis == 2)
+    {
+        dlimenis(2)
+    }
+}
+
+function plimenis(limenis)
+{
+    document.getElementById("r_vards").innerHTML = "Vārds:"
+   
+    document.getElementById("B0").innerHTML ="A"
+    document.getElementById("B1").innerHTML ="K"
+    document.getElementById("B2").innerHTML ="A"
+    document.getElementById("B3").innerHTML ="B"
+    document.getElementById("B4").innerHTML ="L"
+    document.getElementById("B5").innerHTML ="C"
+    document.getElementById("B6").innerHTML ="V"
+    document.getElementById("B7").innerHTML ="Ā"
+    document.getElementById("B8").innerHTML ="A"
+        
+}
+
+function dlimenis(limenis)
+{
+    
+    document.getElementById("B0").innerHTML ="V"
+    document.getElementById("B1").innerHTML ="A"
+    document.getElementById("B2").innerHTML ="I"
+    document.getElementById("B3").innerHTML ="O"
+    document.getElementById("B4").innerHTML ="T"
+    document.getElementById("B5").innerHTML ="A"
+    document.getElementById("B6").innerHTML ="V"
+    document.getElementById("B7").innerHTML ="Ā"
+    document.getElementById("B8").innerHTML ="A"
+}
 
 
-console.log(document.getElementById("B1").innerHTML)
+
+function parbaudit(izv_limenis)
+{
+    console.log(izv_limenis)
+    let sal = document.getElementById("r_vards").innerHTML.split(" ").join("")
+    
+    let pp = sal.split(":")[1]
+    console.log(pp)
+
+    let punkti = 0
+   
+    // if (limenis == 1)
+    // {
+        if (pp == "AKA")
+        {
+            punkti +=1
+        }
+        else if (pp == "ALA")
+        {
+            punkti +=1
+        }
+        else
+        {
+            punkti +=0
+        }
+
+        document.getElementById("punkti").innerHTML += punkti
+    //}
+}
 
 let atvertieLaukumi = []
 
-console.log(document.getElementById("B0").innerHTML)
+
 
 
 
@@ -75,7 +150,7 @@ function veiktGajienu(laukums)
         // document.querySelector('#'+laukums+' div').style.opacity="0.1";
         
         
-         // document.querySelector(laukums).style.visibility="hiden";
+        //  document.querySelector(laukums).style.visibility="hiden";
         // document.querySelector(laukums).style.opacity="0.1";
 
         /*debugger

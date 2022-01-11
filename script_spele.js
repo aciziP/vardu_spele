@@ -29,24 +29,24 @@ document.querySelector('.virsraksts').innerHTML = 'Sveiks, '+vards
 //     document.getElementById("B8").innerHTML =randomCharacter_eight
 //  }
 
-let limenis = 0
+let variants = 0
 
-function limen_izv()
+function var_izv()
 {
-    const limenis = "123"
-    let izv_limenis = limenis[Math.floor(Math.random() * limenis.length)]
+    const variants = "123"
+    let izv_variants = variants[Math.floor(Math.random() * variants.length)]
 
-    if (izv_limenis == 1)
+    if (izv_variants == 1)
     {
-        plimenis(1)
+        pvariants(1)
     }
-    else if (izv_limenis == 2)
+    else if (izv_variants == 2)
     {
-        dlimenis(2)
+        dvariants(2)
     }
 }
 
-function plimenis(limenis)
+function pvariants(variants)
 {
     document.getElementById("r_vards").innerHTML = "Vārds:"
    
@@ -62,7 +62,7 @@ function plimenis(limenis)
         
 }
 
-function dlimenis(limenis)
+function dvariants(variants)
 {
     
     document.getElementById("B0").innerHTML ="V"
@@ -78,9 +78,9 @@ function dlimenis(limenis)
 
 
 
-function parbaudit(izv_limenis)
+function parbaudit(izv_variants)
 {
-    console.log(izv_limenis)
+    console.log(izv_variants)
     let sal = document.getElementById("r_vards").innerHTML.split(" ").join("")
     
     let pp = sal.split(":")[1]

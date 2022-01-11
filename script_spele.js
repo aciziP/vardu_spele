@@ -48,7 +48,7 @@ function var_izv()
 
 function pvariants(variants)
 {
-    document.getElementById("r_vards").innerHTML = "Vārds:"
+    
    
     document.getElementById("B0").innerHTML ="A"
     document.getElementById("B1").innerHTML ="K"
@@ -103,7 +103,14 @@ function parbaudit(izv_variants)
             punkti +=0
         }
 
-        document.getElementById("punkti").innerHTML += punkti
+        let tikai = document.getElementById("punkti").innerHTML.split(" ").join("")
+        let tikai_p = tikai.split(":")[1]
+        console.log(tikai_p)
+        let visi_p = parseInt(tikai_p) + punkti
+
+        document.getElementById("punkti").innerHTML = "Punkti:"+visi_p
+
+        document.getElementById("r_vards").innerHTML = "Vārds:"
     //}
 }
 

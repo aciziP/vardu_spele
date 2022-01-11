@@ -29,7 +29,7 @@ document.querySelector('.virsraksts').innerHTML = 'Sveiks, '+vards
 //     document.getElementById("B8").innerHTML =randomCharacter_eight
 //  }
 
-let variants = 0
+let izv_variants
 
 function var_izv()
 {
@@ -44,9 +44,16 @@ function var_izv()
     {
         dvariants(2)
     }
+    else if(izv_variants == 3)
+    {
+        tvariants()
+    }
+    console.log(izv_variants)
+    return izv_variants
 }
+console.log(izv_variants)
 
-function pvariants(variants)
+function pvariants()
 {
     
    
@@ -62,7 +69,7 @@ function pvariants(variants)
         
 }
 
-function dvariants(variants)
+function dvariants()
 {
     
     document.getElementById("B0").innerHTML ="V"
@@ -72,6 +79,20 @@ function dvariants(variants)
     document.getElementById("B4").innerHTML ="T"
     document.getElementById("B5").innerHTML ="A"
     document.getElementById("B6").innerHTML ="V"
+    document.getElementById("B7").innerHTML ="Ā"
+    document.getElementById("B8").innerHTML ="A"
+}
+
+function tvariants()
+{
+    
+    document.getElementById("B0").innerHTML ="S"
+    document.getElementById("B1").innerHTML ="P"
+    document.getElementById("B2").innerHTML ="Ķ"
+    document.getElementById("B3").innerHTML ="A"
+    document.getElementById("B4").innerHTML ="T"
+    document.getElementById("B5").innerHTML ="K"
+    document.getElementById("B6").innerHTML ="I"
     document.getElementById("B7").innerHTML ="Ā"
     document.getElementById("B8").innerHTML ="A"
 }
@@ -88,8 +109,7 @@ function parbaudit(izv_variants)
 
     let punkti = 0
    
-    // if (limenis == 1)
-    // {
+   
         if (pp == "AKA")
         {
             punkti +=1
@@ -98,20 +118,50 @@ function parbaudit(izv_variants)
         {
             punkti +=1
         }
+        else if (pp == "LABA")
+        {
+            punkti +=1
+        }
+        else if (pp == "VĀCA")
+        {
+            punkti +=1
+        }
+        else if (pp == "VAI")
+        {
+            punkti +=1
+        }
+        else if (pp == "OTA")
+        {
+            punkti +=1
+        }
+        else if (pp == "KAĶIS")
+        {
+            punkti +=1
+        }
+        else if (pp == "TAVA")
+        {
+            punkti +=1
+        }
+        else if (pp == "TAVI")
+        {
+            punkti +=1
+        }
         else
         {
             punkti +=0
         }
 
-        let tikai = document.getElementById("punkti").innerHTML.split(" ").join("")
-        let tikai_p = tikai.split(":")[1]
-        console.log(tikai_p)
-        let visi_p = parseInt(tikai_p) + punkti
+        
+    
 
-        document.getElementById("punkti").innerHTML = "Punkti:"+visi_p
+    let tikai = document.getElementById("punkti").innerHTML.split(" ").join("")
+    let tikai_p = tikai.split(":")[1]
+    console.log(tikai_p)
+    let visi_p = parseInt(tikai_p) + punkti
 
-        document.getElementById("r_vards").innerHTML = "Vārds:"
-    //}
+    document.getElementById("punkti").innerHTML = "Punkti:"+visi_p
+
+    document.getElementById("r_vards").innerHTML = "Vārds:"
 }
 
 let atvertieLaukumi = []

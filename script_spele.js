@@ -6,28 +6,6 @@ adrese = adrese.split(",")
 let vards  = adrese[0]
 document.querySelector('.virsraksts').innerHTML = 'Sveiks, '+vards
 
-
-// function skaitit_laiku()
-// {
-//     var countDownTime = new Date("0:0:30").getTime();
-
-//     console.log(countDownTime)
-
-//     var x = setInterval(function() {
-//         var now = new Date().getTime();
-//         var distance = countDownTime - now;
-//         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-//         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-//         document.getElementById("laiks_s").innerHTML = "Laiks:" + minutes + "m " + seconds + "s ";
-
-//         if (distance < 0) {
-//             clearInterval(x);
-//             document.getElementById("laiks_s").innerHTML += "EXPIRED";
-//           }
-//         }, 1000);
-
-// }
 function iesl_laiku(){
     const timeInSeconds = 15;
     const currentTime = Date.parse(new Date());
@@ -44,6 +22,8 @@ function skaitit_laiku(endtime) {
       seconds
     };
   }
+
+  
   
   function initializeClock( endtime) {
     const clock = document.getElementById("laiks_s");
@@ -52,16 +32,22 @@ function skaitit_laiku(endtime) {
       const t = skaitit_laiku(endtime);
 
       clock.innerHTML = ('Laiks: '+t.seconds+"s");
-  
-      if (t.total <= 0) {
+      
+      if (t.total <= 0) {        
         clearInterval(timeinterval);
       }
     }
-  
+    
     updateClock();
     const timeinterval = setInterval(updateClock, 1000);
+     
   }
   
+  function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+  }
+  
+
 
 
 function var_izv()
@@ -72,14 +58,17 @@ function var_izv()
     if (izv_variants == 1)
     {
         pvariants()
+        iesl_laiku()
     }
     else if (izv_variants == 2)
     {
         dvariants()
+        iesl_laiku()
     }
     else if(izv_variants == 3)
     {
         tvariants()
+        iesl_laiku()
     }
     console.log(izv_variants)
     return izv_variants
@@ -93,10 +82,14 @@ function pvariants()
     document.getElementById("B0").innerHTML ="A"
     document.getElementById("B1").innerHTML ="K"
     document.getElementById("B2").innerHTML ="A"
-    //document.querySelector("#"+"B0"+" div").style.visibility="visible";
+    document.getElementById("B3").innerHTML ="B"
+    document.getElementById("B4").innerHTML ="L"
+    document.getElementById("B5").innerHTML ="C"
+    document.getElementById("B6").innerHTML ="V"
+    document.getElementById("B7").innerHTML ="Ā"
+    document.getElementById("B8").innerHTML ="A"
     
-    
-        
+          
 }
 
 function dvariants()
@@ -129,13 +122,13 @@ function tvariants()
 
 
 
-function parbaudit(izv_variants)
+function parbaudit()
 {
-    console.log(izv_variants)
+    
     let sal = document.getElementById("r_vards").innerHTML.split(" ").join("")
     
     let pp = sal.split(":")[1]
-    console.log(pp)
+    
 
     let punkti = 0
    
@@ -186,7 +179,7 @@ function parbaudit(izv_variants)
 
     let tikai = document.getElementById("punkti").innerHTML.split(" ").join("")
     let tikai_p = tikai.split(":")[1]
-    console.log(tikai_p)
+    
     let visi_p = parseInt(tikai_p) + punkti
 
     document.getElementById("punkti").innerHTML = "Punkti:"+visi_p
@@ -214,12 +207,11 @@ function veiktGajienu(laukums)
         document.getElementById("B7").innerHTML,
         document.getElementById("B8").innerHTML,
         ]
-        console.log(laukumuSaturs)
+       
     let atvertsJaunsLaukums = false
     if( atvertieLaukumi.indexOf(laukums) == -1 )
     {
         atvertsJaunsLaukums = true
-        console.log(document.getElementById(laukums).innerHTML)
     }
     else
     {
@@ -230,22 +222,6 @@ function veiktGajienu(laukums)
     if(atvertsJaunsLaukums)
     {
         
-        //Nomainīts uz visibility. Nemaina izkārtojumu!
-        
-        //KĻŪDA, pēc buru nomaiņas neredz, ka tas ir div elements
-        // document.querySelector('#'+laukums+' div').style.visibility="hiden";
-        // document.querySelector('#'+laukums+' div').style.opacity="0.1";
-        
-        
-        //  document.querySelector(laukums).style.visibility="hiden";
-        // document.querySelector(laukums).style.opacity="0.1";
-
-        /*debugger
-        //Sadalīt "laukums?", lai var paņemt tikai skaitli un izmantot to, lai paņemtu burtu no masīva
-        // let viss_kop = document.getElementById(laukums);
-        // let sadal = viss_kop
-        // document.getElementById("r_vards").innerHTML = 'Vārds: '+sadal*/
-
         //VISS IR VIENKĀRŠĀK!!!!!
         let sadal = laukums[1]   //Paņem laukuma numuru
         let kurs_burts = laukumuSaturs[sadal]   //Paņem attiecīgo burtu no laukumuSaturs

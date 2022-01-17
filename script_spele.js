@@ -6,30 +6,63 @@ adrese = adrese.split(",")
 let vards  = adrese[0]
 document.querySelector('.virsraksts').innerHTML = 'Sveiks, '+vards
 
-// function random_burts()
-//  {
-//     const alphabet = "AĀBCČDEĒFGĢHIĪJKĶLĻMNŅOPRSŠTUŪVZŽ"
-//     const randomCharacter_null = alphabet[Math.floor(Math.random() * alphabet.length)]
-//     const randomCharacter_one = alphabet[Math.floor(Math.random() * alphabet.length)]
-//     const randomCharacter_two = alphabet[Math.floor(Math.random() * alphabet.length)]
-//     const randomCharacter_three = alphabet[Math.floor(Math.random() * alphabet.length)]
-//     const randomCharacter_four= alphabet[Math.floor(Math.random() * alphabet.length)]
-//     const randomCharacter_five = alphabet[Math.floor(Math.random() * alphabet.length)]
-//     const randomCharacter_six = alphabet[Math.floor(Math.random() * alphabet.length)]
-//     const randomCharacter_seven = alphabet[Math.floor(Math.random() * alphabet.length)]
-//     const randomCharacter_eight = alphabet[Math.floor(Math.random() * alphabet.length)]
-//     document.getElementById("B0").innerHTML =randomCharacter_null //Pievieno burtu
-//     document.getElementById("B1").innerHTML =randomCharacter_one
-//     document.getElementById("B2").innerHTML =randomCharacter_two
-//     document.getElementById("B3").innerHTML =randomCharacter_three
-//     document.getElementById("B4").innerHTML =randomCharacter_four
-//     document.getElementById("B5").innerHTML =randomCharacter_five
-//     document.getElementById("B6").innerHTML =randomCharacter_six
-//     document.getElementById("B7").innerHTML =randomCharacter_seven
-//     document.getElementById("B8").innerHTML =randomCharacter_eight
-//  }
 
-let izv_variants
+// function skaitit_laiku()
+// {
+//     var countDownTime = new Date("0:0:30").getTime();
+
+//     console.log(countDownTime)
+
+//     var x = setInterval(function() {
+//         var now = new Date().getTime();
+//         var distance = countDownTime - now;
+//         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+//         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+//         document.getElementById("laiks_s").innerHTML = "Laiks:" + minutes + "m " + seconds + "s ";
+
+//         if (distance < 0) {
+//             clearInterval(x);
+//             document.getElementById("laiks_s").innerHTML += "EXPIRED";
+//           }
+//         }, 1000);
+
+// }
+function iesl_laiku(){
+    const timeInSeconds = 15;
+    const currentTime = Date.parse(new Date());
+    const deadline = new Date(currentTime + timeInSeconds*60*60*1000);
+    initializeClock( deadline);
+}
+
+function skaitit_laiku(endtime) {
+    const total = Date.parse(endtime) - Date.parse(new Date());
+    const seconds = Math.floor((total / 1000) % 60);
+    
+    return {
+      total,
+      seconds
+    };
+  }
+  
+  function initializeClock( endtime) {
+    const clock = document.getElementById("laiks_s");
+  
+    function updateClock() {
+      const t = skaitit_laiku(endtime);
+
+      clock.innerHTML = ('Laiks: '+t.seconds+"s");
+  
+      if (t.total <= 0) {
+        clearInterval(timeinterval);
+      }
+    }
+  
+    updateClock();
+    const timeinterval = setInterval(updateClock, 1000);
+  }
+  
+
 
 function var_izv()
 {
@@ -38,11 +71,11 @@ function var_izv()
 
     if (izv_variants == 1)
     {
-        pvariants(1)
+        pvariants()
     }
     else if (izv_variants == 2)
     {
-        dvariants(2)
+        dvariants()
     }
     else if(izv_variants == 3)
     {
@@ -51,7 +84,7 @@ function var_izv()
     console.log(izv_variants)
     return izv_variants
 }
-console.log(izv_variants)
+
 
 function pvariants()
 {
@@ -60,12 +93,9 @@ function pvariants()
     document.getElementById("B0").innerHTML ="A"
     document.getElementById("B1").innerHTML ="K"
     document.getElementById("B2").innerHTML ="A"
-    document.getElementById("B3").innerHTML ="B"
-    document.getElementById("B4").innerHTML ="L"
-    document.getElementById("B5").innerHTML ="C"
-    document.getElementById("B6").innerHTML ="V"
-    document.getElementById("B7").innerHTML ="Ā"
-    document.getElementById("B8").innerHTML ="A"
+    //document.querySelector("#"+"B0"+" div").style.visibility="visible";
+    
+    
         
 }
 

@@ -4,7 +4,7 @@ adrese = decodeURI(adrese)
 adrese = adrese.replace('#','')
 adrese = adrese.split(",")
 let vards  = adrese[0]
-document.querySelector('.virsraksts').innerHTML = 'Sveiks, '+vards
+document.querySelector('.virsraksts').innerHTML = 'Sveiks/a, '+vards
 
 
 // function skaitit_laiku()
@@ -29,7 +29,7 @@ document.querySelector('.virsraksts').innerHTML = 'Sveiks, '+vards
 
 // }
 function iesl_laiku(){
-    const timeInSeconds = 15;
+    const timeInSeconds = 2;
     const currentTime = Date.parse(new Date());
     const deadline = new Date(currentTime + timeInSeconds*60*60*1000);
     initializeClock( deadline);
@@ -54,7 +54,10 @@ function skaitit_laiku(endtime) {
       clock.innerHTML = ('Laiks: '+t.seconds+"s");
   
       if (t.total <= 0) {
-        clearInterval(timeinterval);
+        //clearInterval(timeinterval);
+        let tikai = document.getElementById("punkti").innerHTML.split(" ").join("")
+        let tikai_p = tikai.split(":")[1]
+        window.location='tops.html/'+vards+'/'+vecums+'/'+tikai_p
       }
     }
   

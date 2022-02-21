@@ -26,4 +26,30 @@ def info():
 
 
 
+
+@app.route('/tops.html/rezultati/jauns/<vards>/<rekords>')
+def jauns_rekords(vards,rekords):
+  try:
+    jauns_rekords = int(rekords)
+  except:
+    return "Stop hacking!"
+
+  jauns_ieraksts = {"vards": vards, "rezultats": jauns_rekords}
+  with open ('dati/top.json', "r", encoding="utf-8") as f:
+    dati = json.loads(f.read())
+
+  ir_ieraksts = False #Pievienot karodziņu
+  for i in range(len(dati["top"])):
+    if dati["top"][i]["vards"] == vards:
+      dati["top"][i]["rezultats"]=(jauns_rekords)
+      ir_ieraksts = True
+  
+  if not ir_ieraksts:
+    dati["top"].append(jauns_ieraksts)
+
+  with open("dati/top.json", "w", encoding="utf-8") as f:
+    f.write(json.dumps(dati, indent=2, ensure_ascii=False))
+
+  return jsonify(dati)
+
 app.run(host='0.0.0.0', port=8080) #iedarbina un palaiž serveri, jābūt pēdējai rindiņai šajā failā

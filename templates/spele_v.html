@@ -46,7 +46,7 @@
             <p class = "vards" id="r_vards"> 
                 Vārds: 
             </p>
-            <button onclick = "var_izv(),iesl_laiku()">Sākt spēli</button>
+            <button id="starta_poga" onclick = "var_izv(),iesl_laiku()">Sākt spēli</button>
             <div class = "game">
                 <div class = "block" id="B0" onclick = "veiktGajienu('B0')">A<div></div></div>
                 <div class = "block" id="B1" onclick = "veiktGajienu('B1')">B<div></div></div>
@@ -59,6 +59,7 @@
                 <div class = "block" id="B8" onclick = "veiktGajienu('B8')">I<div></div></div>
             </div>
             <button onclick = "parbaudit()">Pārbaudīt vārdu</button>
+            <button onclick = "iesn_rezultatu()">Saglabāt rezultātu</button>
              
         </div>
 

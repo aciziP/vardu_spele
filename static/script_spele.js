@@ -4,32 +4,14 @@ adrese = decodeURI(adrese)
 adrese = adrese.replace('#','')
 adrese = adrese.split(",")
 let vards  = adrese[0]
+let vecums = adrese[1]
 document.querySelector('.virsraksts').innerHTML = 'Sveiks/a, '+vards
 
 
-// function skaitit_laiku()
-// {
-//     var countDownTime = new Date("0:0:30").getTime();
 
-//     console.log(countDownTime)
 
-//     var x = setInterval(function() {
-//         var now = new Date().getTime();
-//         var distance = countDownTime - now;
-//         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-//         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-//         document.getElementById("laiks_s").innerHTML = "Laiks:" + minutes + "m " + seconds + "s ";
-
-//         if (distance < 0) {
-//             clearInterval(x);
-//             document.getElementById("laiks_s").innerHTML += "EXPIRED";
-//           }
-//         }, 1000);
-
-// }
 function iesl_laiku(){
-    const timeInSeconds = 2;
+    const timeInSeconds = 30;
     const currentTime = Date.parse(new Date());
     const deadline = new Date(currentTime + timeInSeconds*60*60*1000);
     initializeClock( deadline);
@@ -37,7 +19,7 @@ function iesl_laiku(){
 
 function skaitit_laiku(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date());
-    const seconds = Math.floor((total / 1000) % 60);
+    const seconds = Math.floor((total / 1000) % 60%60);
     
     return {
       total,
@@ -54,17 +36,14 @@ function skaitit_laiku(endtime) {
       clock.innerHTML = ('Laiks: '+t.seconds+"s");
   
       if (t.total <= 0) {
-        //clearInterval(timeinterval);
-        let tikai = document.getElementById("punkti").innerHTML.split(" ").join("")
-        let tikai_p = tikai.split(":")[1]
-        window.location='tops.html/'+vards+'/'+vecums+'/'+tikai_p
+        clearInterval(timeinterval);
       }
     }
   
     updateClock();
     const timeinterval = setInterval(updateClock, 1000);
   }
-  
+
 
 
 function var_izv()
@@ -184,11 +163,7 @@ function parbaudit(izv_variants)
             punkti +=0
         }
 
-        
     
-
-    let tikai = document.getElementById("punkti").innerHTML.split(" ").join("")
-    let tikai_p = tikai.split(":")[1]
     console.log(tikai_p)
     let visi_p = parseInt(tikai_p) + punkti
 
@@ -198,10 +173,6 @@ function parbaudit(izv_variants)
 }
 
 let atvertieLaukumi = []
-
-
-
-
 
 function veiktGajienu(laukums)
 {
@@ -232,22 +203,6 @@ function veiktGajienu(laukums)
     
     if(atvertsJaunsLaukums)
     {
-        
-        //Nomainīts uz visibility. Nemaina izkārtojumu!
-        
-        //KĻŪDA, pēc buru nomaiņas neredz, ka tas ir div elements
-        // document.querySelector('#'+laukums+' div').style.visibility="hiden";
-        // document.querySelector('#'+laukums+' div').style.opacity="0.1";
-        
-        
-        //  document.querySelector(laukums).style.visibility="hiden";
-        // document.querySelector(laukums).style.opacity="0.1";
-
-        /*debugger
-        //Sadalīt "laukums?", lai var paņemt tikai skaitli un izmantot to, lai paņemtu burtu no masīva
-        // let viss_kop = document.getElementById(laukums);
-        // let sadal = viss_kop
-        // document.getElementById("r_vards").innerHTML = 'Vārds: '+sadal*/
 
         //VISS IR VIENKĀRŠĀK!!!!!
         let sadal = laukums[1]   //Paņem laukuma numuru
@@ -256,4 +211,14 @@ function veiktGajienu(laukums)
         
     }
 
+}
+
+function iesn_rezultatu()
+{
+    let tikai = document.getElementById("punkti").innerHTML.split(" ").join("")
+let tikai_p = tikai.split(":")[1]
+    // let tikai = document.getElementById("punkti").innerHTML.split(" ").join("")
+    // let tikai_p = tikai.split(":")[1]
+    window.location='tops.html/'+vards+'/'+vecums+'/'+tikai_p
+  
 }

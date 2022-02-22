@@ -115,6 +115,9 @@ function parbaudit(izv_variants)
 {
     console.log(izv_variants)
     let sal = document.getElementById("r_vards").innerHTML.split(" ").join("")
+
+    let tikai = document.getElementById("punkti").innerHTML.split(" ").join("")
+let tikai_p = tikai.split(":")[1]
     
     let pp = sal.split(":")[1]
     console.log(pp)

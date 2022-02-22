@@ -1,26 +1,13 @@
 {
   "top": [
     {
-      "vards": "Māris",
-      "rezultats": 100,
-      "atrums": 100,
-      "skola": "RVT"
-    },
-    {
-      "vards": "Anna",
-      "rezultats": 250
-    },
-    {
-      "vards": "Aija",
-      "rezultats": 1000
-    },
-    {
-      "vards": "v",
-      "rezultats": 123
-    },
-    {
       "vards": "VIKTORIJA",
       "vecums": "50",
+      "rezultats": "0"
+    },
+    {
+      "vards": "Aaa",
+      "vecums": "45",
       "rezultats": "0"
     }
   ]

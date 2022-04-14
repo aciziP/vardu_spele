@@ -2,13 +2,28 @@
   "top": [
     {
       "vards": "VIKTORIJA",
-      "vecums": "50",
-      "rezultats": "0"
+      "vecums": 50,
+      "punkti": 0
     },
     {
       "vards": "Aaa",
-      "vecums": "45",
-      "rezultats": "0"
+      "vecums": 45,
+      "punkti": 0
+    },
+    {
+      "vards": "Bbbb",
+      "vecums": 22,
+      "punkti": 0
+    },
+    {
+      "vards": "ZZzzzz",
+      "vecums": "22",
+      "punkti": "2"
+    },
+    {
+      "vards": "Annele",
+      "vecums": "15",
+      "punkti": "1"
     }
   ]
 }

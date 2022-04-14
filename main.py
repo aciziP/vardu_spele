@@ -1,11 +1,12 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template
 import json
+import db
 
-app = Flask('app') #Tiek izveidota aplikācija, mainīgais, kas izsauc Flask klasi un nosauc par app
+app = Flask('app')
 app.config['JSON_AS_ASCII'] = False
 
-@app.route('/') #Flask sintakse, app.route aplikācijas ceļš, pamata pirmā lapa (index.html)
-def index():   #Definēta funkcija, kas tiks izpildīta, kad tiks atvērts ceļš
+@app.route('/') 
+def index():
   return render_template("index.html")  #Iegūstam html failu
 
 @app.route('/index.html')
@@ -30,24 +31,16 @@ def jauns_rezultats(vards,vecums,punkti):
   jauns_ieraksts = {
     "vards": vards,
     "vecums": vecums,
-    "rezultats": punkti
+    "punkti": punkti
     }
-  with open ('dati/top.json', "r", encoding="utf-8") as f:
-    dati = json.loads(f.read())
 
-  ir_ieraksts = False #Pievienot karodziņu
-  for i in range(len(dati["top"])):
-    if dati["top"][i]["vards"] == vards:
-      dati["top"][i]["rezultats"]=(punkti)
-      ir_ieraksts = True
-  
-  if not ir_ieraksts:
-    dati["top"].append(jauns_ieraksts)
+  db.pievienot_datus(jauns_ieraksts)
 
-  with open("dati/top.json", "w", encoding="utf-8") as f:
-    f.write(json.dumps(dati, indent=2, ensure_ascii=False))
+  dati = db.atgriezt_datus()
 
-  return jsonify(dati)
+  rez = json.dumps(dati)
+
+  return rez
 
 
 app.run(host='0.0.0.0', port=8080) #iedarbina un palaiž serveri, jābūt pēdējai rindiņai šajā failā

@@ -216,12 +216,11 @@ function veiktGajienu(laukums)
 
 }
 
-function iesn_rezultatu()
-{
-    let tikai = document.getElementById("punkti").innerHTML.split(" ").join("")
+function iesn_rezultatu(){
+  let tikai = document.getElementById("punkti").innerHTML.split(" ").join("")
 let tikai_p = tikai.split(":")[1]
-    // let tikai = document.getElementById("punkti").innerHTML.split(" ").join("")
-    // let tikai_p = tikai.split(":")[1]
-    window.location='tops.html/'+vards+'/'+vecums+'/'+tikai_p
-  
+    window.location='tops.html#'+vards+','+vecums+','+tikai_p
 }
+
+
+

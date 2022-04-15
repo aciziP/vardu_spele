@@ -3,27 +3,32 @@
     {
       "vards": "VIKTORIJA",
       "vecums": 50,
-      "punkti": 0
+      "punkti": 0,
+      "datums": "2021/05/30"
     },
     {
       "vards": "Aaa",
       "vecums": 45,
-      "punkti": 0
+      "punkti": 0,
+      "datums": "2021/05/30"
     },
     {
       "vards": "Bbbb",
       "vecums": 22,
-      "punkti": 0
+      "punkti": 0,
+      "datums": "2021/05/30"
     },
     {
       "vards": "ZZzzzz",
-      "vecums": "22",
-      "punkti": "2"
+      "vecums": 22,
+      "punkti": 2,
+      "datums": "2021/05/30"
     },
     {
       "vards": "Annele",
-      "vecums": "15",
-      "punkti": "1"
+      "vecums": 15,
+      "punkti": 1,
+      "datums": "2021/05/30"
     }
   ]
 }

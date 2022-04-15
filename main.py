@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
+import datetime
 import json
 import db
 
@@ -25,22 +26,27 @@ def tops():
 def info():
   return render_template("info.html")  
 
-@app.route('/tops.html/<vards>/<vecums>/<punkti>')
+@app.route('/sutit/<vards>/<vecums>/<punkti>')
 def jauns_rezultats(vards,vecums,punkti):
-  
+  tagad = datetime.datetime.now()
+  datums = tagad.strftime("%Y/%m/%d, %H:%M:%S")
   jauns_ieraksts = {
     "vards": vards,
     "vecums": vecums,
-    "punkti": punkti
+    "punkti": punkti,
+    "datums": datums
     }
 
   db.pievienot_datus(jauns_ieraksts)
+  return "Darits"
 
+@app.route('/lasit')
+def lasit():
   dati = db.atgriezt_datus()
 
   rez = json.dumps(dati)
 
   return rez
 
-
+  
 app.run(host='0.0.0.0', port=8080) #iedarbina un palaiž serveri, jābūt pēdējai rindiņai šajā failā
